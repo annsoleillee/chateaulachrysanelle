@@ -1184,13 +1184,16 @@ nav.scrolled { padding: 18px 60px; }
   /* your mobile code */
 }
 
-/* FIX HERO LOCATION LINE - DESKTOP */
+/* FINAL DESKTOP HERO FIX */
 @media (min-width: 769px) {
+  .hero-content {
+    padding-bottom: 55px !important;
+  }
+
   .hero-label {
-    position: relative !important;
-    top: 80px !important;
-    display: block;
-    z-index: 2;
+    position: static !important;
+    top: auto !important;
+    margin-bottom: 34px !important;
   }
 }
 
