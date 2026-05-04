@@ -1178,6 +1178,22 @@ nav.scrolled { padding: 18px 60px; }
     padding-top: 220px !important;
   }
 }
+/* your existing CSS above */
+
+@media (max-width: 768px) {
+  /* your mobile code */
+}
+
+/* FIX HERO LOCATION LINE - DESKTOP */
+@media (min-width: 769px) {
+  .hero-label {
+    position: relative !important;
+    top: 80px !important;
+    display: block;
+    z-index: 2;
+  }
+}
+
 </style>
 </head>
 <body>
