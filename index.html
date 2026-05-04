@@ -982,8 +982,8 @@ nav.scrolled { padding: 18px 60px; }
   }
 
   .nav-logo img {
-    width: 145px !important;
-    max-height: 52px;
+    width: 180px !important;
+    max-height: 70px;
   }
 
   .nav-links {
@@ -1040,9 +1040,8 @@ nav.scrolled { padding: 18px 60px; }
   }
 
   .hero-label {
-    position: relative !important;
-    top: 90px !important;
-    margin-bottom: 125 !important;
+    position: static !important;
+    margin-bottom: 14px !important;
     font-size: 9px;
     letter-spacing: 2.4px;
     line-height: 1.7;
@@ -1173,7 +1172,12 @@ nav.scrolled { padding: 18px 60px; }
     gap: 12px;
   }
 }
-
+/* Desktop hero location line fix */
+@media (min-width: 769px) {
+  .hero-content {
+    padding-top: 220px !important;
+  }
+}
 </style>
 </head>
 <body>
