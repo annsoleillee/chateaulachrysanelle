@@ -1196,7 +1196,18 @@ nav.scrolled { padding: 18px 60px; }
     transform: translateY(10px);
   }
 }
+/* FINAL HERO POSITION FIX — DESKTOP ONLY */
+@media (min-width: 769px) {
+  .hero-content {
+    transform: translateY(100px) !important;
+  }
 
+  .hero-label {
+    transform: none !important;
+    position: static !important;
+    margin-bottom: 34px !important;
+  }
+}
 </style>
 </head>
 <body>
