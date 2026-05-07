@@ -1208,6 +1208,38 @@ nav.scrolled { padding: 18px 60px; }
     margin-bottom: 34px !important;
   }
 }
+/* ─── LANGUAGE SWITCHER ─── */
+.language-switcher {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-right: 18px;
+}
+
+.language-switcher a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.language-switcher a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .language-switcher {
+    gap: 8px;
+    margin-right: 4px;
+  }
+
+  .language-switcher a {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
 </style>
 </head>
 <body>
@@ -1215,7 +1247,7 @@ nav.scrolled { padding: 18px 60px; }
 <!-- ─── NAVIGATION ─── -->
 <nav id="mainNav">
   <a href="#" class="nav-logo"><img src="logo-107-white.png" alt="107 Promenade International Real Estate"></a>
-  <ul class="nav-links">
+  <ul class="nav-links">  
     <li><a href="#estate">The Estate</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#details">Details</a></li>
@@ -1223,6 +1255,14 @@ nav.scrolled { padding: 18px 60px; }
     <li><a href="#location">Location</a></li>
     <li><a href="#agency">Agency</a></li>
   </ul>
+  
+  <div class="language-switcher">
+    <a href="index.html">EN</a>
+    <a href="index-fr.html">FR</a>
+    <a href="index-it.html">IT</a>
+    <a href="index-es.html">ES</a>
+ </div>
+
   <a href="#contact" class="nav-button">Contact</a>
 </nav>
 
