@@ -1208,36 +1208,90 @@ nav.scrolled { padding: 18px 60px; }
     margin-bottom: 34px !important;
   }
 }
-/* ─── LANGUAGE SWITCHER ─── */
-.language-switcher {
-  display: flex;
-  gap: 12px;
-  align-items: center;
+/* ─── LANGUAGE DROPDOWN ─── */
+.language-dropdown {
+  position: relative;
   margin-right: 18px;
 }
 
-.language-switcher a {
-  color: rgba(255,255,255,0.7);
-  text-decoration: none;
+.language-current {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.82);
+  padding: 10px 14px;
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Jost', sans-serif;
 }
 
-.language-switcher a:hover {
+.language-current:hover {
+  border-color: var(--gold);
   color: var(--gold);
 }
 
+.language-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: rgba(15,27,45,0.98);
+  border: 1px solid rgba(201,169,110,0.2);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.language-dropdown:hover .language-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-menu a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 14px 18px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.language-menu a:hover {
+  background: rgba(201,169,110,0.08);
+  color: var(--gold);
+}
+
+.active-language {
+  color: var(--gold) !important;
+  background: rgba(201,169,110,0.06);
+}
+
 @media (max-width: 768px) {
-  .language-switcher {
-    gap: 8px;
-    margin-right: 4px;
+  .language-dropdown {
+    margin-right: 8px;
   }
 
-  .language-switcher a {
-    font-size: 7px;
-    letter-spacing: 1px;
+  .language-current {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  .language-menu {
+    min-width: 150px;
+    right: -10px;
+  }
+
+  .language-menu a {
+    font-size: 10px;
+    padding: 12px 14px;
   }
 }
 </style>
@@ -1256,12 +1310,15 @@ nav.scrolled { padding: 18px 60px; }
     <li><a href="#agency">Agency</a></li>
   </ul>
   
-  <div class="language-switcher">
-    <a href="index.html">EN</a>
-    <a href="index-fr.html">FR</a>
-    <a href="index-it.html">IT</a>
-    <a href="index-es.html">ES</a>
- </div>
+  <div class="language-dropdown">
+    <button class="language-current">🇬🇧 EN</button>
+    <div class="language-menu">
+      <a href="index.html" class="active-language">🇬🇧 English</a>
+      <a href="index-fr.html">🇫🇷 Français</a>
+      <a href="index-it.html">🇮🇹 Italiano</a>
+      <a href="index-es.html">🇪🇸 Español</a>
+    </div>
+  </div>
 
   <a href="#contact" class="nav-button">Contact</a>
 </nav>
