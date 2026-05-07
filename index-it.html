@@ -962,6 +962,93 @@ nav.scrolled { padding: 18px 60px; }
 .contact-info-value a { color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.45); transition: color .3s ease, border-color .3s ease; }
 .contact-info-value a:hover { color: var(--gold); border-color: var(--gold); }
 
+/* ─── LANGUAGE DROPDOWN ─── */
+.language-dropdown {
+  position: relative;
+  margin-right: 18px;
+}
+
+.language-current {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.82);
+  padding: 10px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Jost', sans-serif;
+}
+
+.language-current:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.language-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: rgba(15,27,45,0.98);
+  border: 1px solid rgba(201,169,110,0.2);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.language-dropdown:hover .language-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-menu a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 14px 18px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.language-menu a:hover {
+  background: rgba(201,169,110,0.08);
+  color: var(--gold);
+}
+
+.active-language {
+  color: var(--gold) !important;
+  background: rgba(201,169,110,0.06);
+}
+
+@media (max-width: 768px) {
+  .language-dropdown {
+    margin-right: 8px;
+  }
+
+  .language-current {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  .language-menu {
+    min-width: 150px;
+    right: -10px;
+  }
+
+  .language-menu a {
+    font-size: 10px;
+    padding: 12px 14px;
+  }
+}
+  
 </style>
 </head>
 <body>
@@ -973,9 +1060,18 @@ nav.scrolled { padding: 18px 60px; }
 <li><a href="#details">Dettagli</a></li>
 <li><a href="#vision">Visione</a></li>
 <li><a href="#location">Posizione</a></li>
-<li><a href="#contact">Contatto</a></li>
+<li><a href="#agency">Agenzia</a></li>
 </ul>
-<a class="nav-button" href="#agency">Agenzia</a>
+  <div class="language-dropdown">
+  <button class="language-current">🇮🇹 IT</button>
+  <div class="language-menu">
+    <a href="index.html">🇬🇧 English</a>
+    <a href="index-fr.html">🇫🇷 Français</a>
+    <a href="index-it.html" class="active-language">🇮🇹 Italiano</a>
+    <a href="index-es.html">🇪🇸 Español</a>
+  </div>
+</div>
+<a class="nav-button" href="#contact">Contatto</a>
 </nav>
 <!-- ─── HERO ─── -->
 <section class="hero">
