@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Château La Chrysanelle — Propiedad de prestigio | Grimaud · Golfo de Saint-Tropez | 107 Promenade</title>
+<meta content="Château La Chrysanelle — una propiedad de prestigio de 587 m² en Grimaud, con vistas al Golfo de Saint-Tropez. Pista de tenis privada, casa de invitados, piscina. Presentada en exclusiva por 107 Promenade." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&amp;family=Jost:wght@200;300;400;500&amp;display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --navy: #0f1b2d;
+    --navy-mid: #162236;
+    --navy-light: #1e3050;
+    --gold: #c9a96e;
+    --gold-light: #e2c99a;
+    --cream: #f5f0e8;
+    --cream-dark: #ede7d9;
+    --white: #fdfaf6;
+    --grey: #8a8a8a;
+    --grey-light: #d4d0c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(15, 27, 45, 0.97);
+    padding: 16px 60px;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--navy);
+    /* Replace with: background-image: url('your-hero-photo.jpg'); background-size: cover; background-position: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder {
+    color: rgba(255,255,255,0.1);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(8,15,26,0.9) 0%, rgba(8,15,26,0.68) 42%, rgba(8,15,26,0.28) 70%, rgba(8,15,26,0.1) 100%),
+      linear-gradient(to bottom, rgba(15,27,45,0.38) 0%, rgba(15,27,45,0.18) 42%, rgba(15,27,45,0.62) 78%, rgba(15,27,45,0.92) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 60px 80px;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.3s forwards;
+  }
+
+  .hero-label {
+    text-shadow: 0 2px 18px rgba(0,0,0,0.65);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 300;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .hero-title {
+    text-shadow: 0 5px 34px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.95);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    text-shadow: 0 2px 18px rgba(0,0,0,0.75);
+    color: rgba(255,255,255,0.82);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 6px;
+    transition: all 0.3s;
+  }
+
+  .hero-cta:hover { color: var(--gold); gap: 24px; }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.4);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(201,169,110,0.6), transparent);
+  }
+
+  /* ─── KEY STATS BAND ─── */
+  .stats-band {
+    background: var(--navy);
+    padding: 50px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    border-top: 1px solid rgba(201,169,110,0.2);
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .stat-item {
+    padding: 30px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 120px 60px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4a5568;
+    font-weight: 300;
+    max-width: 580px;
+  }
+
+  .section-text + .section-text {
+    margin-top: 20px;
+  }
+
+  /* ─── INTRO SECTION ─── */
+  .intro {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .intro-visual {
+    aspect-ratio: 3/4;
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--grey);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .photo-placeholder svg {
+    opacity: 0.3;
+  }
+
+  .intro-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    opacity: 0.15;
+  }
+
+  /* ─── GALLERY ─── */
+  .gallery {
+    background: var(--cream);
+    padding: 80px 60px;
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .gallery-item {
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item:first-child {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-item:not(:first-child) {
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item .photo-placeholder {
+    background: rgba(0,0,0,0.03);
+  }
+
+  .gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(15,27,45,0.3));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .gallery-item:hover::before { opacity: 1; }
+
+  .gallery-grid {
+    grid-auto-flow: dense;
+    align-items: stretch;
+  }
+
+  .gallery-item,
+  .gallery-item:first-child,
+  .gallery-item:not(:first-child) {
+    aspect-ratio: auto;
+    min-height: 340px;
+  }
+
+  .gallery-item:first-child {
+    min-height: 460px;
+  }
+
+  .gallery-item img {
+    display: block;
+  }
+
+  /* ─── PROPERTY DETAILS ─── */
+  .details {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .detail-block {
+    margin-bottom: 56px;
+  }
+
+  .detail-block-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .detail-block-title::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a5568;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .detail-list li:last-child { border-bottom: none; }
+
+  .detail-list span:first-child {
+    color: #2d3748;
+    font-weight: 400;
+  }
+
+  .detail-list span:last-child {
+    color: var(--grey);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .details-visual {
+    position: sticky;
+    top: 100px;
+  }
+
+  .details-visual-main {
+    aspect-ratio: 3/4;
+    background: var(--navy-mid);
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .details-visual-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .details-visual-secondary .gallery-item {
+    aspect-ratio: 1;
+  }
+
+  /* ─── VISION SECTION ─── */
+  .vision {
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%);
+  }
+
+  .vision-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .vision .section-title { color: var(--white); }
+  .vision .section-text { color: rgba(255,255,255,0.65); max-width: none; }
+
+  .vision-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px;
+    font-weight: 300;
+    color: rgba(201,169,110,0.08);
+    line-height: 1;
+    position: absolute;
+    top: -40px;
+    left: -20px;
+  }
+
+  .vision-quote {
+    position: relative;
+    padding: 50px;
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+
+  .vision-quote::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    line-height: 1;
+  }
+
+  .vision-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+
+  .vision-quote cite {
+    display: block;
+    margin-top: 24px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ─── LOCATION ─── */
+  .location {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .location-map {
+    aspect-ratio: 1;
+    background: var(--cream-dark);
+    position: relative;
+  }
+
+  .location-points {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .location-point {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a5568;
+  }
+
+  .location-point:last-child { border-bottom: none; }
+
+  .location-point-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-weight: 400;
+  }
+
+  .location-point-name::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .location-point-time {
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: 1px;
+  }
+
+  /* ─── AMENITIES GRID ─── */
+  .amenities {
+    background: var(--white);
+  }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .amenity-card {
+    background: var(--cream);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .amenity-card:hover {
+    background: var(--navy);
+  }
+
+  .amenity-card:hover .amenity-title,
+  .amenity-card:hover .amenity-desc {
+    color: var(--white);
+  }
+
+  .amenity-card:hover .amenity-number {
+    color: rgba(201,169,110,0.15);
+  }
+
+  .amenity-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(15,27,45,0.06);
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    line-height: 1;
+    transition: color 0.3s;
+  }
+
+  .amenity-icon {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .amenity-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 12px;
+    transition: color 0.3s;
+  }
+
+  .amenity-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b7280;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  /* ─── AGENCY ─── */
+  .agency {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: center;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .agency-logo-wrap {
+    background: var(--cream);
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+  }
+
+  .agency-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 600px;
+  }
+
+  .contact-left {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .contact-right {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact .section-title { color: var(--white); margin-bottom: 20px; }
+  .contact .section-text { color: rgba(255,255,255,0.55); margin-bottom: 48px; }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-info-line {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-info-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .contact-info-value {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .form-submit {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 16px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  .form-legal {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080f1a;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ─── GOLD LINE DIVIDER ─── */
+  .gold-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 0 50px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── SELECT OPTION FIX ─── */
+  .form-group select option { background: var(--navy-mid); color: var(--white); }
+
+
+
+/* ─── FINAL GITHUB-READY POLISH ─── */
+nav { padding: 26px 60px; gap: 34px; }
+nav.scrolled { padding: 18px 60px; }
+.nav-logo { display:flex; align-items:center; flex: 0 0 auto; }
+.nav-logo img { width: 190px; height: auto; max-height: 70px; object-fit: contain; display:block; }
+.nav-links { flex: 1; justify-content:center; }
+.nav-button { background: var(--gold); color: var(--navy); text-decoration: none; font-size: 10px; letter-spacing: 2.2px; text-transform: uppercase; padding: 15px 22px; font-weight: 500; white-space: nowrap; transition: all .3s ease; }
+.nav-button:hover { background: var(--gold-light); }
+.hero-content { padding-bottom: 96px; }
+.hero-label { margin-bottom: 30px; letter-spacing: 4.8px; }
+.hero-overlay { background: linear-gradient(90deg, rgba(8,15,26,.52) 0%, rgba(8,15,26,.34) 38%, rgba(8,15,26,.14) 68%, rgba(8,15,26,.04) 100%), linear-gradient(to bottom, rgba(15,27,45,.18) 0%, rgba(15,27,45,.04) 44%, rgba(15,27,45,.30) 75%, rgba(15,27,45,.62) 100%); }
+.hero-title { text-shadow: 0 7px 38px rgba(0,0,0,.88), 0 2px 8px rgba(0,0,0,.9); }
+.hero-label, .hero-sub, .hero-cta { text-shadow: 0 3px 18px rgba(0,0,0,.78); }
+.gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); grid-auto-rows: 300px; gap: 18px; align-items: stretch; }
+.gallery-item, .gallery-item:first-child, .gallery-item:not(:first-child) { min-height: 0 !important; aspect-ratio: auto !important; height: auto; }
+.gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery-item img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block; }
+.gallery { padding-bottom: 90px; }
+.agency { background: var(--white); display:block; padding: 120px 60px; border-top: 1px solid var(--cream-dark); }
+.agency-inner { max-width: 1120px; margin: 0 auto; display:grid; grid-template-columns: .85fr 1.15fr; gap: 85px; align-items:center; }
+.agency-brand-card { background: var(--cream); min-height: 330px; display:flex; align-items:center; justify-content:center; padding: 58px; border: 1px solid var(--cream-dark); }
+.agency-logo { max-width: 330px; width:100%; height:auto; display:block; }
+.agency-copy .section-title { margin-bottom: 30px; }
+.agency-cta { display:inline-flex; margin-top:34px; padding-bottom:6px; border-bottom:1px solid var(--gold); color: var(--navy); text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:500; transition: all .3s ease; }
+.agency-cta:hover { color: var(--gold); letter-spacing:3.4px; }
+.footer-logo span { color: inherit; }
+@media (max-width: 900px) {
+  nav { padding: 18px 24px; }
+  nav.scrolled { padding: 14px 24px; }
+  .nav-logo img { width: 150px; }
+  .nav-links { display:none; }
+  .nav-button { font-size: 9px; padding: 12px 14px; }
+  .hero-content { padding: 0 28px 70px; }
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 320px; }
+  .gallery-item:first-child { grid-column:auto; grid-row:auto; }
+  .agency-inner { grid-template-columns: 1fr; gap: 40px; }
+  .agency-brand-card { min-height: 220px; }
+}
+
+
+/* ─── FINAL USER REQUEST FIXES ─── */
+.hero-content { padding-bottom: 56px; }
+.hero-label { position: relative; top: 54px; margin-bottom: 88px; }
+.contact-info-value a { color: rgba(255,255,255,0.8); text-decoration: none; border-bottom: 1px solid rgba(201,169,110,0.45); transition: color .3s ease, border-color .3s ease; }
+.contact-info-value a:hover { color: var(--gold); border-color: var(--gold); }
+
+</style>
+</head>
+<body>
+<!-- ─── NAVIGATION ─── -->
+<nav id="mainNav">
+<a class="nav-logo" href="#"><img alt="107 Promenade International Real Estate" src="logo-107-white.png"/></a>
+<ul class="nav-links">
+<li><a href="#estate">La Propiedad</a></li>
+<li><a href="#details">Detalles</a></li>
+<li><a href="#vision">Visión</a></li>
+<li><a href="#location">Ubicación</a></li>
+<li><a href="#contact">Contacto</a></li>
+</ul>
+<a class="nav-button" href="#agency">La Agencia</a>
+</nav>
+<!-- ─── HERO ─── -->
+<section class="hero">
+<div class="hero-bg">
+<img alt="Château La Chrysanelle en Grimaud con piscina al atardecer" src="hero-main.png" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+</div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<span class="hero-label">Grimaud · Domaine Privé de Beauvallon · Golfo de Saint-Tropez</span>
+<h1 class="hero-title">Château La<br/><em>Chrysanelle</em></h1>
+<p class="hero-sub">Una propiedad de prestigio con vistas al Golfo de Saint-Tropez</p>
+<a class="hero-cta" href="#contact">Solicitar una visita privada →</a>
+</div>
+</section>
+<!-- ─── STATS BAND ─── -->
+<div class="stats-band">
+<div class="stat-item" style="animation-delay:0.1s">
+<div class="stat-number">587</div>
+<div class="stat-label">m² Château principal</div>
+</div>
+<div class="stat-item" style="animation-delay:0.2s">
+<div class="stat-number">150</div>
+<div class="stat-label">m² Garaje</div>
+</div>
+<div class="stat-item" style="animation-delay:0.3s">
+<div class="stat-number">193</div>
+<div class="stat-label">m² Casa de invitados</div>
+</div>
+<div class="stat-item" style="animation-delay:0.4s">
+<div class="stat-number">12.25M€</div>
+<div class="stat-label">Precio solicitado</div>
+</div>
+</div>
+<!-- ─── INTRO ─── -->
+<section class="intro" id="estate">
+<div class="intro-visual fade-in">
+<img alt="Exterior de Château La Chrysanelle en el Domaine de Beauvallon, Grimaud" src="d3.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+</div>
+<div class="fade-in" style="transition-delay: 0.2s">
+<span class="section-label">Grimaud · Beauvallon · Golfo de Saint-Tropez</span>
+<h2 class="section-title">Una propiedad de<br/><em>carácter excepcional</em></h2>
+<div class="gold-divider"></div>
+<p class="section-text">
+      Château La Chrysanelle se encuentra en el prestigioso Domaine Privé de Beauvallon, en Grimaud — sede del campo de golf más antiguo de la Costa Azul. El Golfo de Saint-Tropez, su puerto y el mar abierto se despliegan ante usted en un panorama que cambia con cada hora de luz.
+    </p>
+<p class="section-text" style="margin-top:20px;">
+      Concebida en estrecha colaboración con un arquitecto francés, esta propiedad de estilo château combina proporciones refinadas, luz mediterránea y una rara sensación de privacidad. No es simplemente una residencia: es la expresión de una visión singular.
+    </p>
+</div>
+</section>
+<!-- ─── GALLERY ─── -->
+<div class="gallery fade-in">
+<div class="gallery-header">
+<div>
+<span class="section-label">La propiedad</span>
+<h2 class="section-title" style="margin-bottom:0;">Una inmersión visual</h2>
+</div>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item">
+<img alt="Piscina y vista al atardecer en Château La Chrysanelle" src="pool.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Château La Chrysanelle reflejado en la piscina al atardecer" src="hero2.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Exterior de Château La Chrysanelle en el Domaine de Beauvallon" src="d3.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Exterior de Château La Chrysanelle y jardines paisajísticos" src="manor.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Vista nocturna del château y de los jardines" src="manor2.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Terraza exterior y detalles arquitectónicos de Château La Chrysanelle" src="exterior.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Vista panorámica al mar sobre el Golfo de Saint-Tropez" src="view2.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Vista al mar al atardecer desde la propiedad" src="view.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Gran salón con chimenea y vistas al mar" src="living.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Comedor formal con lámpara de araña y chimenea" src="dining.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Dormitorio principal con acabados refinados" src="bedroom.jpeg"/>
+</div>
+<div class="gallery-item">
+<img alt="Elegante segundo dormitorio con acabados refinados" src="bedroom2.jpeg"/>
+</div>
+</div>
+</div>
+<!-- ─── PROPERTY DETAILS ─── -->
+<section class="details" id="details">
+<div class="fade-in">
+<span class="section-label">Planta por planta</span>
+<h2 class="section-title">Las <em>Residencias</em></h2>
+<div class="gold-divider"></div>
+<div class="detail-block">
+<div class="detail-block-title">Château principal — 587 m²</div>
+<ul class="detail-list">
+<li><span>Planta baja</span><span>Gran salón · Biblioteca · Comedor · Cocina · Despacho</span></li>
+<li><span>Cada sala de recepción</span><span>Chimenea</span></li>
+<li><span>Planta superior</span><span>Suite principal · 2 dormitorios de invitados en suite</span></li>
+<li><span>Sótano</span><span>Amplio nivel de servicio</span></li>
+<li><span>Ascensor</span><span>Interior, todos los niveles</span></li>
+<li><span>Torre central</span><span>Firma arquitectónica que conecta ambos niveles</span></li>
+</ul>
+</div>
+<div class="detail-block">
+<div class="detail-block-title">Casa de invitados — 193 m²</div>
+<ul class="detail-list">
+<li><span>Sala de estar</span><span>Con chimenea</span></li>
+<li><span>Cocina</span><span>Totalmente equipada</span></li>
+<li><span>Dormitorios</span><span>3 en suite</span></li>
+<li><span>Terraza</span><span>Vista al mar sobre el Golfo</span></li>
+<li><span>Acceso</span><span>Acceso directo desde el jardín + conexión subterránea con la residencia principal</span></li>
+</ul>
+</div>
+<div class="detail-block">
+<div class="detail-block-title">Propiedad &amp; exteriores</div>
+<ul class="detail-list">
+<li><span>Piscina</span><span>Privada</span></li>
+<li><span>Pista de tenis</span><span>Privada</span></li>
+<li><span>Garaje</span><span>150 m²</span></li>
+<li><span>Domaine</span><span>Seguro, privado — Domaine de Beauvallon, Grimaud</span></li>
+<li><span>Golf</span><span>El campo más antiguo de la Costa Azul, a las puertas de la propiedad</span></li>
+</ul>
+</div>
+</div>
+<div class="details-visual fade-in" style="transition-delay:0.3s">
+<div class="details-visual-main">
+<img alt="Exterior de Château La Chrysanelle y jardines paisajísticos" src="manor.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+</div>
+<div class="details-visual-main" style="margin-bottom:0;">
+<img alt="Terraza exterior y detalles arquitectónicos de Château La Chrysanelle" src="exterior.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+</div>
+</div>
+</section>
+<!-- ─── VISION ─── -->
+<section class="vision" id="vision">
+<div class="vision-inner">
+<div class="fade-in" style="position:relative;">
+<div class="vision-number">8</div>
+<span class="section-label">Arquitectura &amp; patrimonio</span>
+<h2 class="section-title">Una visión<br/><em>Visión</em></h2>
+<div class="gold-divider"></div>
+<p class="section-text">
+        Hay propiedades que se construyen y propiedades que se crean. Château La Chrysanelle pertenece a la segunda categoría.
+      </p>
+<p class="section-text" style="margin-top:20px;">
+        Cada detalle fue concebido con intención — refinado, equilibrado y acercado a un ideal de vida intemporal en la Riviera. El resultado es una propiedad de estilo château de rara elegancia en uno de los entornos más deseados cerca de Saint-Tropez.
+      </p>
+<p class="section-text" style="margin-top:20px;">
+        La torre central que conecta los dos niveles no es meramente funcional — es la firma arquitectónica de la propiedad. La conexión subterránea entre la residencia principal y la casa de invitados responde al mismo principio: belleza e inteligencia trabajando al unísono.
+      </p>
+</div>
+<div class="fade-in" style="transition-delay:0.3s;">
+<div class="vision-quote">
+<p>Adquirir Château La Chrysanelle no significa simplemente adquirir una propiedad, sino una rara expresión de elegancia mediterránea — una finca privada moldeada por la arquitectura, la luz y el arte de vivir.</p>
+<cite>107 Promenade International Real Estate</cite>
+</div>
+</div>
+</div>
+</section>
+<!-- ─── AMENITIES ─── -->
+<section class="amenities fade-in">
+<span class="section-label">Estilo de vida</span>
+<h2 class="section-title">Cada detalle,<br/><em>concebido</em></h2>
+<div class="amenities-grid">
+<div class="amenity-card">
+<div class="amenity-number">01</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Piscina</div>
+<p class="amenity-desc">Una piscina privada situada en jardines paisajísticos, con vistas al Golfo de Saint-Tropez desde las alturas de Grimaud.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-number">02</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Pista de tenis privada</div>
+<p class="amenity-desc">Una pista de tenis privada que completa la excepcional oferta deportiva y de ocio de la propiedad.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-number">03</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Garaje de 150 m²</div>
+<p class="amenity-desc">Un garaje privado de generosas proporciones — raro en la Riviera — ideal para albergar varios vehículos.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-number">04</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Ascensor interior</div>
+<p class="amenity-desc">Acceso fluido a todos los niveles del château principal, incluido el amplio sótano.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-number">05</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Golf — el más antiguo de la Costa Azul</div>
+<p class="amenity-desc">El legendario Golf de Beauvallon, el campo más antiguo de la Costa Azul, se encuentra a las puertas de la propiedad.</p>
+</div>
+<div class="amenity-card">
+<div class="amenity-number">06</div>
+<div class="amenity-icon"></div>
+<div class="amenity-title">Domaine privado y seguro</div>
+<p class="amenity-desc">El Domaine Privé de Beauvallon ofrece total privacidad y seguridad en uno de los enclaves más deseados del Golfo.</p>
+</div>
+</div>
+</section>
+<!-- ─── LOCATION ─── -->
+<section class="location" id="location">
+<div class="fade-in">
+<span class="section-label">Beauvallon · Grimaud · Golfo de Saint-Tropez</span>
+<h2 class="section-title">Entre Beauvallon<br/>y <em>Saint-Tropez</em></h2>
+<div class="gold-divider"></div>
+<p class="section-text">
+      El Domaine Privé de Beauvallon en Grimaud ocupa una de las posiciones más privilegiadas del Golfo de Saint-Tropez — lo suficientemente elevada para dominar todo el panorama y lo bastante privada para sentirse completamente apartada del mundo.
+    </p>
+<p class="section-text" style="margin-top:20px;">
+      Grimaud y Beauvallon están al alcance inmediato. El pueblo de Saint-Tropez se alcanza en quince minutos en ferry. El campo de golf más antiguo de la Costa Azul se encuentra a las puertas de la propiedad.
+    </p>
+<div class="location-points">
+<div class="location-point">
+<span class="location-point-name">Pueblo de Saint-Tropez (en ferry)</span>
+<span class="location-point-time">15 min</span>
+</div>
+<div class="location-point">
+<span class="location-point-name">Playa privada, Domaine de Beauvallon</span>
+<span class="location-point-time">5 min en coche</span>
+</div>
+<div class="location-point">
+<span class="location-point-name">Golf de Beauvallon</span>
+<span class="location-point-time">A las puertas de la propiedad</span>
+</div>
+<div class="location-point">
+<span class="location-point-name">Aeropuerto de La Môle – Saint-Tropez</span>
+<span class="location-point-time">20 min</span>
+</div>
+<div class="location-point">
+<span class="location-point-name">Acceso al helipuerto más cercano</span>
+<span class="location-point-time">10 min</span>
+</div>
+<div class="location-point">
+<span class="location-point-name">Aeropuerto Nice Côte d’Azur</span>
+<span class="location-point-time">1h</span>
+</div>
+</div>
+</div>
+<div class="location-map fade-in" style="transition-delay:0.3s;">
+<img alt="Vista al mar desde Château La Chrysanelle hacia el Golfo de Saint-Tropez" src="view2.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
+</div>
+</section>
+<!-- ─── AGENCY ─── -->
+<section class="agency fade-in" id="agency">
+<div class="agency-inner">
+<div class="agency-brand-card">
+<img alt="Logo 107 Promenade International Real Estate" class="agency-logo" src="logo-107-color.png"/>
+</div>
+<div class="agency-copy">
+<span class="section-label">Presentado por 107 Promenade</span>
+<h2 class="section-title">Mandato exclusivo<br/><em>Expertos de la Costa Azul</em></h2>
+<div class="gold-divider"></div>
+<p class="section-text">
+        107 Promenade International Real Estate presenta Château La Chrysanelle en exclusiva. Con 30 años de experiencia en propiedades excepcionales frente al mar y de lujo en la Costa Azul, entre Cannes y Mónaco, la agencia aporta un conocimiento excepcional del mercado, discreción y una comprensión refinada del estilo de vida costero de alta gama.
+      </p>
+<p class="section-text" style="margin-top:20px;">
+        Sus servicios incluyen compraventa, alquileres de temporada, alquileres anuales y gestión de propiedades. Con sede en la Promenade des Anglais, 107 Promenade es reconocida como uno de los expertos de referencia en Niza y en otras zonas de la Costa Azul, especialmente para direcciones excepcionales frente al mar.
+      </p>
+<a class="agency-cta" href="#contact">Contactar con el mandatario exclusivo →</a>
+</div>
+</div>
+</section>
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+<div class="contact-left">
+<span class="section-label">Presentación privada</span>
+<h2 class="section-title">Solicitar una<br/><em>visita</em></h2>
+<p class="section-text">
+      Château La Chrysanelle se presenta en exclusiva por 107 Promenade International Real Estate y está disponible para visitas privadas únicamente con cita previa. Un dossier completo, incluyendo planos arquitectónicos y fotografías, está disponible bajo solicitud y confidencialidad.
+    </p>
+<div class="contact-info">
+<div class="contact-info-line">
+<span class="contact-info-label">Agencia</span>
+<span class="contact-info-value">107 Promenade International Real Estate</span>
+</div>
+<div class="contact-info-line">
+<span class="contact-info-label">Dirección</span>
+<span class="contact-info-value">107 Promenade des Anglais — 06000 Nice, France</span>
+</div>
+<div class="contact-info-line">
+<span class="contact-info-label">Contacto</span>
+<span class="contact-info-value">Kirkor Ajderhanyan</span>
+</div>
+<div class="contact-info-line">
+<span class="contact-info-label">Teléfono</span>
+<span class="contact-info-value"><a href="tel:+33614598899">+33 (0)6 14 59 88 99</a></span>
+</div>
+<div class="contact-info-line">
+<span class="contact-info-label">Email</span>
+<span class="contact-info-value"><a href="mailto:kirkor@107promenade.com">kirkor@107promenade.com</a></span>
+</div>
+<div class="contact-info-line">
+<span class="contact-info-label">Instagram</span>
+<span class="contact-info-value">@107promenade</span>
+</div>
+</div>
+</div>
+<div class="contact-right">
+<form action="https://formspree.io/f/xzdyqwaz" class="contact-form" method="POST">
+<input name="_subject" type="hidden" value="New Château La Chrysanelle Lead"/>
+<div class="form-row">
+<div class="form-group">
+<label for="firstname">Nombre</label>
+<input id="firstname" name="firstname" placeholder="Juan" type="text"/>
+</div>
+<div class="form-group">
+<label for="lastname">Apellido</label>
+<input id="lastname" name="lastname" placeholder="García" type="text"/>
+</div>
+</div>
+<div class="form-group">
+<label for="email">Dirección de e-mail</label>
+<input id="email" name="email" placeholder="jean.dupont@example.com" type="email"/>
+</div>
+<div class="form-group">
+<label for="phone">Teléfono</label>
+<input id="phone" name="phone" placeholder="+33 6 00 00 00 00" type="tel"/>
+</div>
+<div class="form-group">
+<label for="profile">Su perfil</label>
+<select id="profile" name="profile">
+<option value="">Seleccione su perfil</option>
+<option>Comprador</option>
+<option>Representante del comprador</option>
+<option>Banquero privado / Gestor patrimonial</option>
+<option>Family Office</option>
+<option>Prensa / Medios</option>
+<option>Otro</option>
+</select>
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" placeholder="Me gustaría recibir el dossier completo y hablar sobre una visita privada..."></textarea>
+</div>
+<button class="form-submit" type="submit">Enviar solicitud</button>
+<p class="form-legal">Su solicitud será enviada de forma segura y tratada con total confidencialidad por 107 Promenade International Real Estate.</p>
+</form>
+</div>
+</section>
+<!-- ─── FOOTER ─── -->
+<footer>
+<div class="footer-logo">107 <span>Promenade</span> International Real Estate</div>
+<div class="footer-copy">© 2026 · Château La Chrysanelle · Todos los derechos reservados</div>
+<div class="footer-links">
+<a href="#">Política de privacidad</a>
+<a href="#">Aviso legal</a>
+<a href="https://www.107promenade.com">107promenade.com</a>
+</div>
+</footer>
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Intersection observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
