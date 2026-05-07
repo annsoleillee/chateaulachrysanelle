@@ -466,10 +466,13 @@
   }
 
   .details-visual-main {
-    aspect-ratio: 3/4;
-    background: var(--navy-mid);
+    width: 100%;
+    height: 320px;
+    background: transparent;
     margin-bottom: 16px;
     position: relative;
+    overflow: hidden;
+    aspect-ratio: auto;
   }
 
   .details-visual-secondary {
@@ -1059,6 +1062,7 @@ nav.scrolled { padding: 18px 60px; }
 <a class="nav-logo" href="#"><img alt="107 Promenade International Real Estate" src="logo-107-white.png"/></a>
 <ul class="nav-links">
 <li><a href="#estate">Le Domaine</a></li>
+<li><a href="#gallery">Galerie</a></li>
 <li><a href="#details">Détails</a></li>
 <li><a href="#vision">Vision</a></li>
 <li><a href="#location">Localisation</a></li>
@@ -1125,52 +1129,72 @@ nav.scrolled { padding: 18px 60px; }
 </div>
 </section>
 <!-- ─── GALLERY ─── -->
-<div class="gallery fade-in">
-<div class="gallery-header">
-<div>
-<span class="section-label">La propriété</span>
-<h2 class="section-title" style="margin-bottom:0;">Une immersion visuelle</h2>
-</div>
-</div>
-<div class="gallery-grid">
-<div class="gallery-item">
-<img alt="Piscine et vue au coucher du soleil au Château La Chrysanelle" src="pool.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Château La Chrysanelle se reflétant dans la piscine au coucher du soleil" src="hero2.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Extérieur du Château La Chrysanelle dans le Domaine de Beauvallon" src="d3.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Extérieur du Château La Chrysanelle et jardins paysagers" src="manor.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Vue du château et des jardins en soirée" src="manor2.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Terrasse extérieure et détails architecturaux du Château La Chrysanelle" src="exterior.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Vue mer panoramique sur le Golfe de Saint-Tropez" src="view2.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Vue mer au coucher du soleil depuis la propriété" src="view.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Grand salon avec cheminée et vue mer" src="living.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Salle à manger avec lustre et cheminée" src="dining.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Suite principale aux finitions raffinées" src="bedroom.jpeg"/>
-</div>
-<div class="gallery-item">
-<img alt="Élégante deuxième chambre aux finitions raffinées" src="bedroom2.jpeg"/>
-</div>
-</div>
-</div>
+<section class="gallery" id="gallery">
+  <div class="gallery fade-in">
+
+    <div class="gallery-header">
+      <div>
+        <span class="section-label">La propiedad</span>
+        <h2 class="section-title" style="margin-bottom:0;">
+          Una inmersión visual
+        </h2>
+      </div>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img alt="Piscina y vista al atardecer en Château La Chrysanelle" src="pool.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Château La Chrysanelle reflejado en la piscina al atardecer" src="hero2.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Exterior de Château La Chrysanelle en el Domaine de Beauvallon" src="d3.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Exterior de Château La Chrysanelle y jardines paisajísticos" src="manor.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Vista nocturna del château y de los jardines" src="manor2.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Terraza exterior y detalles arquitectónicos de Château La Chrysanelle" src="exterior.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Vista panorámica al mar sobre el Golfo de Saint-Tropez" src="view2.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Vista al mar al atardecer desde la propiedad" src="view.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Gran salón con chimenea y vistas al mar" src="living.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Comedor formal con lámpara de araña y chimenea" src="dining.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Dormitorio principal con acabados refinados" src="bedroom.jpeg"/>
+      </div>
+
+      <div class="gallery-item">
+        <img alt="Elegante segundo dormitorio con acabados refinados" src="bedroom2.jpeg"/>
+      </div>
+
+    </div>
+
+  </div>
+</section>
 <!-- ─── PROPERTY DETAILS ─── -->
 <section class="details" id="details">
 <div class="fade-in">
@@ -1210,12 +1234,21 @@ nav.scrolled { padding: 18px 60px; }
 </div>
 </div>
 <div class="details-visual fade-in" style="transition-delay:0.3s">
-<div class="details-visual-main">
-<img alt="Extérieur du Château La Chrysanelle et jardins paysagers" src="manor.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
-</div>
-<div class="details-visual-main" style="margin-bottom:0;">
-<img alt="Terrasse extérieure et détails architecturaux du Château La Chrysanelle" src="exterior.jpeg" style="width:100%;height:100%;object-fit:cover;object-position:center;"/>
-</div>
+
+  <div class="details-visual-main">
+    <img src="manor.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  </div>
+
+  <div class="details-visual-main">
+    <img src="exterior.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  </div>
+
+  <div class="details-visual-main">
+    <img src="golf.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+  </div>
 </div>
 </section>
 <!-- ─── VISION ─── -->
@@ -1224,7 +1257,7 @@ nav.scrolled { padding: 18px 60px; }
 <div class="fade-in" style="position:relative;">
 <div class="vision-number">8</div>
 <span class="section-label">Architecture &amp; héritage</span>
-<h2 class="section-title">Une vision<br/><em>Vision</em></h2>
+<h2 class="section-title">Une vision<br/><em>singulière</em></h2>
 <div class="gold-divider"></div>
 <p class="section-text">
         Il existe des propriétés que l’on construit, et des propriétés que l’on crée. Le Château La Chrysanelle appartient à la seconde catégorie.
