@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Château La Chrysanelle — 尊贵庄园 | 格里莫 · 圣特罗佩湾 | 107 Promenade</title>
+<meta name="description" content="Château La Chrysanelle — 位于格里莫、俯瞰圣特罗佩湾的尊贵庄园。主建筑587平方米，配有私人网球场、客房别墅和泳池，由107 Promenade独家呈现。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1b2d;
+    --navy-mid: #162236;
+    --navy-light: #1e3050;
+    --gold: #c9a96e;
+    --gold-light: #e2c99a;
+    --cream: #f5f0e8;
+    --cream-dark: #ede7d9;
+    --white: #fdfaf6;
+    --grey: #8a8a8a;
+    --grey-light: #d4d0c8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 24px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(15, 27, 45, 0.97);
+    padding: 16px 60px;
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-logo {
+    color: var(--white);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-logo span {
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ─── HERO ─── */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--navy);
+    /* Replace with: background-image: url('your-hero-photo.jpg'); background-size: cover; background-position: center; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-placeholder {
+    color: rgba(255,255,255,0.1);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 2;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(90deg, rgba(8,15,26,0.9) 0%, rgba(8,15,26,0.68) 42%, rgba(8,15,26,0.28) 70%, rgba(8,15,26,0.1) 100%),
+      linear-gradient(to bottom, rgba(15,27,45,0.38) 0%, rgba(15,27,45,0.18) 42%, rgba(15,27,45,0.62) 78%, rgba(15,27,45,0.92) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 60px 80px;
+    max-width: 900px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease 0.3s forwards;
+  }
+
+  .hero-label {
+    text-shadow: 0 2px 18px rgba(0,0,0,0.65);
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 300;
+    top: 90px;
+    margin-bottom: 40px;
+    display: block;
+  }
+
+  .hero-title {
+    text-shadow: 0 5px 34px rgba(0,0,0,0.9), 0 2px 4px rgba(0,0,0,0.95);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.05;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    text-shadow: 0 2px 18px rgba(0,0,0,0.75);
+    color: rgba(255,255,255,0.82);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-bottom: 48px;
+  }
+
+  .hero-cta {
+    text-shadow: 0 2px 14px rgba(0,0,0,0.7);
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 6px;
+    transition: all 0.3s;
+  }
+
+  .hero-cta:hover { color: var(--gold); gap: 24px; }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.4);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .hero-scroll::after {
+    content: '';
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(201,169,110,0.6), transparent);
+  }
+
+  /* ─── KEY STATS BAND ─── */
+  .stats-band {
+    background: var(--navy);
+    padding: 50px 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    border-top: 1px solid rgba(201,169,110,0.2);
+    border-bottom: 1px solid rgba(201,169,110,0.2);
+  }
+
+  .stat-item {
+    padding: 30px 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
+  }
+
+  .stat-item:last-child { border-right: none; }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+  }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 120px 60px; }
+
+  .section-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 54px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 40px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .section-text {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #4a5568;
+    font-weight: 300;
+    max-width: 580px;
+  }
+
+  .section-text + .section-text {
+    margin-top: 20px;
+  }
+
+  /* ─── INTRO SECTION ─── */
+  .intro {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+  }
+
+  .intro-visual {
+    aspect-ratio: 3/4;
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--grey);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .photo-placeholder svg {
+    opacity: 0.3;
+  }
+
+  .intro-visual::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    opacity: 0.15;
+  }
+
+  /* ─── GALLERY ─── */
+  .gallery {
+    background: var(--cream);
+    padding: 80px 60px;
+  }
+
+  .gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 50px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+  }
+
+  .gallery-item {
+    background: var(--cream-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-item:first-child {
+    grid-column: span 2;
+    aspect-ratio: 16/9;
+  }
+
+  .gallery-item:not(:first-child) {
+    aspect-ratio: 4/3;
+  }
+
+  .gallery-item .photo-placeholder {
+    background: rgba(0,0,0,0.03);
+  }
+
+  .gallery-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(15,27,45,0.3));
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .gallery-item:hover::before { opacity: 1; }
+
+  .gallery-grid {
+    grid-auto-flow: dense;
+    align-items: stretch;
+  }
+
+  .gallery-item,
+  .gallery-item:first-child,
+  .gallery-item:not(:first-child) {
+    aspect-ratio: auto;
+    min-height: 340px;
+  }
+
+  .gallery-item:first-child {
+    min-height: 460px;
+  }
+
+  .gallery-item img {
+    display: block;
+  }
+
+  /* ─── PROPERTY DETAILS ─── */
+  .details {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .detail-block {
+    margin-bottom: 56px;
+  }
+
+  .detail-block-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cream-dark);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .detail-block-title::before {
+    content: '';
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .detail-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a5568;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  .detail-list li:last-child { border-bottom: none; }
+
+  .detail-list span:first-child {
+    color: #2d3748;
+    font-weight: 400;
+  }
+
+  .detail-list span:last-child {
+    color: var(--grey);
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .details-visual {
+    position: sticky;
+    top: 100px;
+  }
+
+  .details-visual-main {
+  width: 100%;
+  height: 320px;
+  background: transparent;
+  margin-bottom: 16px;
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: auto;
+}
+
+  .details-visual-secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .details-visual-secondary .gallery-item {
+    aspect-ratio: 1;
+  }
+
+  /* ─── VISION SECTION ─── */
+  .vision {
+    background: var(--navy);
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vision::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(201,169,110,0.06) 0%, transparent 70%);
+  }
+
+  .vision-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .vision .section-title { color: var(--white); }
+  .vision .section-text { color: rgba(255,255,255,0.65); max-width: none; }
+
+  .vision-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 200px;
+    font-weight: 300;
+    color: rgba(201,169,110,0.08);
+    line-height: 1;
+    position: absolute;
+    top: -40px;
+    left: -20px;
+  }
+
+  .vision-quote {
+    position: relative;
+    padding: 50px;
+    border: 1px solid rgba(201,169,110,0.25);
+  }
+
+  .vision-quote::before {
+    content: '"';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 120px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -20px;
+    left: 30px;
+    line-height: 1;
+  }
+
+  .vision-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+  }
+
+  .vision-quote cite {
+    display: block;
+    margin-top: 24px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-style: normal;
+  }
+
+  /* ─── LOCATION ─── */
+  .location {
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+
+  .location-map {
+    aspect-ratio: 1;
+    background: var(--cream-dark);
+    position: relative;
+  }
+
+  .location-points {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .location-point {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    font-size: 13px;
+    font-weight: 300;
+    color: #4a5568;
+  }
+
+  .location-point:last-child { border-bottom: none; }
+
+  .location-point-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--navy);
+    font-weight: 400;
+  }
+
+  .location-point-name::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .location-point-time {
+    font-size: 12px;
+    color: var(--grey);
+    letter-spacing: 1px;
+  }
+
+  /* ─── AMENITIES GRID ─── */
+  .amenities {
+    background: var(--white);
+  }
+
+  .amenities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 60px;
+  }
+
+  .amenity-card {
+    background: var(--cream);
+    padding: 48px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .amenity-card:hover {
+    background: var(--navy);
+  }
+
+  .amenity-card:hover .amenity-title,
+  .amenity-card:hover .amenity-desc {
+    color: var(--white);
+  }
+
+  .amenity-card:hover .amenity-number {
+    color: rgba(201,169,110,0.15);
+  }
+
+  .amenity-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(15,27,45,0.06);
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    line-height: 1;
+    transition: color 0.3s;
+  }
+
+  .amenity-icon {
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .amenity-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 12px;
+    transition: color 0.3s;
+  }
+
+  .amenity-desc {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #6b7280;
+    font-weight: 300;
+    transition: color 0.3s;
+  }
+
+  /* ─── AGENCY ─── */
+  .agency {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 90px;
+    align-items: center;
+    border-top: 1px solid var(--cream-dark);
+  }
+
+  .agency-logo-wrap {
+    background: var(--cream);
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+  }
+
+  .agency-logo {
+    max-width: 320px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* ─── CONTACT ─── */
+  .contact {
+    background: var(--navy);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 600px;
+  }
+
+  .contact-left {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 1px solid rgba(201,169,110,0.15);
+  }
+
+  .contact-right {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact .section-title { color: var(--white); margin-bottom: 20px; }
+  .contact .section-text { color: rgba(255,255,255,0.55); margin-bottom: 48px; }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-info-line {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .contact-info-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+  }
+
+  .contact-info-value {
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    font-weight: 400;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--white);
+    padding: 14px 16px;
+    font-family: 'Jost', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.3s;
+    resize: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea { height: 100px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .form-submit {
+    background: var(--gold);
+    color: var(--navy);
+    border: none;
+    padding: 16px 40px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: flex-start;
+  }
+
+  .form-submit:hover { background: var(--gold-light); }
+
+  .form-legal {
+    font-size: 11px;
+    color: rgba(255,255,255,0.25);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #080f1a;
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(201,169,110,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-logo span { color: var(--gold); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 1px;
+    font-weight: 300;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .footer-links a {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  /* ─── GOLD LINE DIVIDER ─── */
+  .gold-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 0 50px;
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ─── SELECT OPTION FIX ─── */
+  .form-group select option { background: var(--navy-mid); color: var(--white); }
+
+
+
+/* ─── FINAL GITHUB-READY POLISH ─── */
+nav { padding: 26px 60px; gap: 34px; }
+nav.scrolled { padding: 18px 60px; }
+.nav-logo { display:flex; align-items:center; flex: 0 0 auto; }
+.nav-logo img { width: 280px; height: auto; max-height: 95px; object-fit: contain; display:block; }
+.nav-links { flex: 1; justify-content:center; }
+.nav-button { background: var(--gold); color: var(--navy); text-decoration: none; font-size: 10px; letter-spacing: 2.2px; text-transform: uppercase; padding: 15px 22px; font-weight: 500; white-space: nowrap; transition: all .3s ease; }
+.nav-button:hover { background: var(--gold-light); }
+.hero-content { padding-bottom: 96px; }
+.hero-label { margin-bottom: 30px; letter-spacing: 4.8px; }
+.hero-overlay { background: linear-gradient(90deg, rgba(8,15,26,.52) 0%, rgba(8,15,26,.34) 38%, rgba(8,15,26,.14) 68%, rgba(8,15,26,.04) 100%), linear-gradient(to bottom, rgba(15,27,45,.18) 0%, rgba(15,27,45,.04) 44%, rgba(15,27,45,.30) 75%, rgba(15,27,45,.62) 100%); }
+.hero-title { text-shadow: 0 7px 38px rgba(0,0,0,.88), 0 2px 8px rgba(0,0,0,.9); }
+.hero-label, .hero-sub, .hero-cta { text-shadow: 0 3px 18px rgba(0,0,0,.78); }
+.gallery-grid { grid-template-columns: repeat(3, minmax(0,1fr)); grid-auto-rows: 300px; gap: 18px; align-items: stretch; }
+.gallery-item, .gallery-item:first-child, .gallery-item:not(:first-child) { min-height: 0 !important; aspect-ratio: auto !important; height: auto; }
+.gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+.gallery-item img { width: 100% !important; height: 100% !important; object-fit: cover !important; display: block; }
+.gallery { padding-bottom: 90px; }
+.agency { background: var(--white); display:block; padding: 120px 60px; border-top: 1px solid var(--cream-dark); }
+.agency-inner { max-width: 1120px; margin: 0 auto; display:grid; grid-template-columns: .85fr 1.15fr; gap: 85px; align-items:center; }
+.agency-brand-card { background: var(--cream); min-height: 330px; display:flex; align-items:center; justify-content:center; padding: 58px; border: 1px solid var(--cream-dark); }
+.agency-logo { max-width: 330px; width:100%; height:auto; display:block; }
+.agency-copy .section-title { margin-bottom: 30px; }
+.agency-cta { display:inline-flex; margin-top:34px; padding-bottom:6px; border-bottom:1px solid var(--gold); color: var(--navy); text-decoration:none; font-size:11px; letter-spacing:3px; text-transform:uppercase; font-weight:500; transition: all .3s ease; }
+.agency-cta:hover { color: var(--gold); letter-spacing:3.4px; }
+.footer-logo span { color: inherit; }
+/* ─── FINAL MOBILE + LINK FIXES ─── */
+.contact-info-value a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(201,169,110,0.45);
+  transition: color .3s ease, border-color .3s ease;
+}
+
+.contact-info-value a:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--white);
+  }
+
+  nav {
+    position: fixed;
+    width: 100%;
+    padding: 14px 18px !important;
+    gap: 12px;
+  }
+
+  nav.scrolled {
+    padding: 12px 18px !important;
+  }
+
+  .nav-logo img {
+    width: 180px !important;
+    max-height: 70px;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-button {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    padding: 10px 12px;
+  }
+
+  .hero,
+  .stats-band,
+  .intro,
+  .gallery,
+  .details,
+  .vision,
+  .amenities,
+  .location,
+  .agency,
+  .contact,
+  footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  section,
+  .gallery,
+  .agency {
+    padding: 64px 22px !important;
+  }
+
+  .hero {
+    height: 100svh !important;
+    min-height: 720px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 62% center !important;
+  }
+
+  .hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 24px 70px !important;
+  }
+
+  .hero-label {
+    position: static !important;
+    margin-bottom: 14px !important;
+    font-size: 9px;
+    letter-spacing: 2.4px;
+    line-height: 1.7;
+  }
+
+  .hero-title {
+    font-size: 48px !important;
+    line-height: 1.05;
+    margin-bottom: 22px;
+  }
+
+  .hero-sub {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .hero-cta {
+    font-size: 9px;
+    letter-spacing: 2.2px;
+  }
+
+  .stats-band {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 34px 22px !important;
+  }
+
+  .stat-item {
+    padding: 24px 18px !important;
+  }
+
+  .stat-number {
+    font-size: 40px;
+  }
+
+  .intro,
+  .details,
+  .vision-inner,
+  .location,
+  .contact,
+  .agency-inner {
+    grid-template-columns: 1fr !important;
+    gap: 42px !important;
+  }
+
+  .intro-visual,
+  .details-visual,
+  .location-map {
+    width: 100% !important;
+    position: static !important;
+    top: auto !important;
+  }
+
+  .intro-visual {
+    aspect-ratio: 4 / 5;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 16px !important;
+  }
+
+  .gallery-item,
+  .gallery-item:first-child,
+  .gallery-item:not(:first-child) {
+    width: 100% !important;
+    height: 280px !important;
+    min-height: 0 !important;
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .gallery-item img,
+  .details-visual-main img,
+  .intro-visual img,
+  .location-map img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .details-visual-main {
+    width: 100% !important;
+    height: 280px !important;
+    margin-bottom: 16px;
+  }
+
+  .detail-list li {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .detail-list span:last-child {
+    text-align: left;
+  }
+
+  .amenities-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 64px 22px !important;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 18px;
+    text-align: center;
+    padding: 38px 22px !important;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+/* Desktop hero location line fix */
+@media (min-width: 769px) {
+  .hero-content {
+    padding-top: 220px !important;
+  }
+}
+/* your existing CSS above */
+
+@media (max-width: 768px) {
+  /* your mobile code */
+}
+
+/* FINAL DESKTOP HERO FIX */
+@media (min-width: 769px) {
+  .hero-content {
+    padding-bottom: 120px /* controls global vertical position */
+  }
+
+  .hero-label {
+    display: block;
+    margin-bottom: 28px;
+    transform: translateY(10px);
+  }
+}
+/* FINAL HERO POSITION FIX — DESKTOP ONLY */
+@media (min-width: 769px) {
+  .hero-content {
+    transform: translateY(100px) !important;
+  }
+
+  .hero-label {
+    transform: none !important;
+    position: static !important;
+    margin-bottom: 34px !important;
+  }
+}
+/* ─── LANGUAGE DROPDOWN ─── */
+.language-dropdown {
+  position: relative;
+  margin-right: 18px;
+}
+
+.language-current {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.82);
+  padding: 10px 14px;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Jost', sans-serif;
+}
+
+.language-current:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.language-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  background: rgba(15,27,45,0.98);
+  border: 1px solid rgba(201,169,110,0.2);
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
+
+.language-dropdown:hover .language-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.language-menu a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  padding: 14px 18px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.language-menu a:hover {
+  background: rgba(201,169,110,0.08);
+  color: var(--gold);
+}
+
+.active-language {
+  color: var(--gold) !important;
+  background: rgba(201,169,110,0.06);
+}
+
+@media (max-width: 768px) {
+  .language-dropdown {
+    margin-right: 8px;
+  }
+
+  .language-current {
+    padding: 8px 10px;
+    font-size: 8px;
+  }
+
+  .language-menu {
+    min-width: 150px;
+    right: -10px;
+  }
+
+  .language-menu a {
+    font-size: 10px;
+    padding: 12px 14px;
+  }
+}
+</style>
+  
+<script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="mainNav">
+  <a href="#" class="nav-logo"><img src="logo-107-white.png" alt="107 Promenade International Real Estate"></a>
+  <ul class="nav-links">  
+    <li><a href="#estate">庄园</a></li>
+    <li><a href="#gallery">图库</a></li>
+    <li><a href="#details">详情</a></li>
+    <li><a href="#vision">愿景</a></li>
+    <li><a href="#location">位置</a></li>
+    <li><a href="#agency">代理机构</a></li>
+  </ul>
+  
+  <div class="language-dropdown">
+    <button class="language-current">🇨🇳 中文</button>
+    <div class="language-menu">
+      <a href="index.html">🇬🇧 English</a>
+      <a href="index-fr.html">🇫🇷 Français</a>
+      <a href="index-it.html">🇮🇹 Italiano</a>
+      <a href="index-es.html">🇪🇸 Español</a>
+      <a href="index-ru.html">🇷🇺 Русский</a>
+      <a href="index-cn.html" class="active-language">🇨🇳 中文</a>
+    </div>
+  </div>
+
+  <a href="#contact" class="nav-button">联系</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="hero-main.png" alt="格里莫Château La Chrysanelle庄园与泳池的黄金时刻景观" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-label">格里莫 · Beauvallon私人庄园 · 圣特罗佩湾</span>
+    <h1 class="hero-title">Château La<br><em>Chrysanelle</em></h1>
+   <p class="hero-sub">
+  俯瞰圣特罗佩湾的尊贵庄园<br>
+  <span style="color:var(--gold-light); font-size:11px; letter-spacing:3px;">
+    由107 Promenade独家呈现
+  </span>
+</p>
+    <a href="#contact" class="hero-cta">预约私人参观 →</a>
+  </div>
+  
+</section>
+
+<!-- ─── STATS BAND ─── -->
+<div class="stats-band">
+  <div class="stat-item" style="animation-delay:0.1s">
+    <div class="stat-number">587</div>
+    <div class="stat-label">平方米 主庄园</div>
+  </div>
+  <div class="stat-item" style="animation-delay:0.2s">
+    <div class="stat-number">150</div>
+    <div class="stat-label">平方米 车库</div>
+  </div>
+  <div class="stat-item" style="animation-delay:0.3s">
+    <div class="stat-number">193</div>
+    <div class="stat-label">平方米 客房别墅</div>
+  </div>
+  <div class="stat-item" style="animation-delay:0.4s">
+    <div class="stat-number">12.25M€</div>
+    <div class="stat-label">售价</div>
+  </div>
+</div>
+
+<!-- ─── INTRO ─── -->
+<section class="intro" id="estate">
+  <div class="intro-visual fade-in">
+    <img src="d3.jpeg" alt="位于格里莫Beauvallon私人庄园的Château La Chrysanelle外观" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+  <div class="fade-in" style="transition-delay: 0.2s">
+    <span class="section-label">格里莫 · Beauvallon · 圣特罗佩湾</span>
+    <h2 class="section-title">一座<br><em>非凡格调的庄园</em></h2>
+    <div class="gold-divider"></div>
+    <p class="section-text">
+      Château La Chrysanelle坐落于格里莫备受推崇的庄园e Privé de Beauvallon私人庄园内——这里也是蔚蓝海岸历史最悠久的高尔夫球场所在地。圣特罗佩湾、港口与辽阔海景在眼前展开，随着每一小时的光线变化而呈现不同景致。
+    </p>
+    <p class="section-text" style="margin-top:20px;">
+      这座城堡风格庄园由业主与法国建筑师紧密合作打造，融合精致比例、地中海光线与难得的私密感。它不仅是一处住宅，更是一种独特愿景的表达。
+    </p>
+  </div>
+</section>
+
+<!-- ─── GALLERY ─── -->
+<section class="gallery" id="gallery">
+  <div class="gallery fade-in">
+  <div class="gallery-header">
+    <div>
+      <span class="section-label">庄园影像</span>
+      <h2 class="section-title" style="margin-bottom:0;">视觉之旅</h2>
+    </div>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="pool.jpeg" alt="Château La Chrysanelle泳池与日落景观">
+    </div>
+    <div class="gallery-item">
+      <img src="hero2.jpeg" alt="日落时分倒映在泳池中的Château La Chrysanelle">
+    </div>
+    <div class="gallery-item">
+      <img src="d3.jpeg" alt="Beauvallon庄园内的Château La Chrysanelle外观">
+    </div>
+    <div class="gallery-item">
+      <img src="manor.jpeg" alt="Château La Chrysanelle外观与景观花园">
+    </div>
+    <div class="gallery-item">
+      <img src="manor2.jpeg" alt="城堡与花园的夜景">
+    </div>
+    <div class="gallery-item">
+      <img src="exterior.jpeg" alt="Château La Chrysanelle露台与建筑细节">
+    </div>
+    <div class="gallery-item">
+      <img src="view2.jpeg" alt="圣特罗佩湾全景海景">
+    </div>
+    <div class="gallery-item">
+      <img src="view.jpeg" alt="庄园望向海面的日落景观">
+    </div>
+    <div class="gallery-item">
+      <img src="living.jpeg" alt="带壁炉和海景的宏伟客厅">
+    </div>
+    <div class="gallery-item">
+      <img src="dining.jpeg" alt="带吊灯和壁炉的正式餐厅">
+    </div>
+    <div class="gallery-item">
+      <img src="bedroom.jpeg" alt="精致装修的主卧套房">
+    </div>
+    <div class="gallery-item">
+      <img src="bedroom2.jpeg" alt="精致装修的第二间卧室">
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ─── PROPERTY DETAILS ─── -->
+<section class="details" id="details">
+  <div class="fade-in">
+    <span class="section-label">逐层介绍</span>
+    <h2 class="section-title"><em>住宅空间</em></h2>
+    <div class="gold-divider"></div>
+
+    <div class="detail-block">
+      <div class="detail-block-title">主庄园 — 587平方米</div>
+      <ul class="detail-list">
+        <li><span>首层</span><span>大客厅 · 图书室 · 餐厅 · 厨房 · 书房</span></li>
+        <li><span>每间接待空间</span><span>壁炉</span></li>
+        <li><span>楼上</span><span>主卧套房 · 2间带独立卫浴的客房</span></li>
+        <li><span>地下层</span><span>宽敞的功能空间</span></li>
+        <li><span>电梯</span><span>内部电梯，通达所有楼层</span></li>
+        <li><span>中央塔楼</span><span>连接两层的建筑标志</span></li>
+      </ul>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-block-title">客房别墅 — 193平方米</div>
+      <ul class="detail-list">
+        <li><span>起居室</span><span>配有壁炉</span></li>
+        <li><span>厨房</span><span>设备齐全</span></li>
+        <li><span>卧室</span><span>3间带独立卫浴</span></li>
+        <li><span>露台</span><span>面向海湾的海景</span></li>
+        <li><span>通道</span><span>可从花园直接进入，并通过地下通道连接主楼</span></li>
+      </ul>
+    </div>
+
+    <div class="detail-block">
+      <div class="detail-block-title">庄园与户外空间</div>
+      <ul class="detail-list">
+        <li><span>泳池</span><span>私人</span></li>
+        <li><span>网球场</span><span>私人</span></li>
+        <li><span>车库</span><span>150平方米</span></li>
+        <li><span>庄园</span><span>Secured, private — 庄园e de Beauvallon, Grimaud</span></li>
+        <li><span>Golf</span><span>蔚蓝海岸历史最悠久的高尔夫球场，近在咫尺</span></li>
+      </ul>
+    </div>
+  </div>
+
+<div class="details-visual fade-in" style="transition-delay:0.3s">
+
+  <div class="details-visual-main">
+    <img src="manor.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  </div>
+
+  <div class="details-visual-main">
+    <img src="exterior.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+  </div>
+
+  <div class="details-visual-main">
+    <img src="golf.jpeg"
+         style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
+  </div>
+
+</div>
+</section>
+
+<!-- ─── VISION ─── -->
+<section class="vision" id="vision">
+  <div class="vision-inner">
+    <div class="fade-in" style="position:relative;">
+      <div class="vision-number">8</div>
+      <span class="section-label">建筑与传承</span>
+      <h2 class="section-title">独特的<br><em>愿景</em></h2>
+      <div class="gold-divider"></div>
+      <p class="section-text">
+        有些房产只是被建造出来，而有些房产则是被创造出来。Château La Chrysanelle属于后者。
+      </p>
+      <p class="section-text" style="margin-top:20px;">
+        每一个细节都经过深思熟虑——精致、平衡，并不断接近永恒里维埃拉生活方式的理想。最终呈现的是一座罕见优雅的城堡风格庄园，位于圣特罗佩附近最令人向往的环境之一。
+      </p>
+      <p class="section-text" style="margin-top:20px;">
+        连接两层的中央塔楼不仅具有功能性，更是庄园的建筑标志。主楼与客房别墅之间的地下连接也体现了同样的理念：美感与智慧并存。
+      </p>
+    </div>
+    <div class="fade-in" style="transition-delay:0.3s;">
+      <div class="vision-quote">
+        <p>拥有Château La Chrysanelle，不只是拥有一处房产，而是拥有地中海优雅的一种罕见表达——一座由建筑、光线与生活艺术共同塑造的私人庄园。</p>
+        <cite>107 Promenade International Real Estate</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AMENITIES ─── -->
+<section class="amenities fade-in">
+  <span class="section-label">生活方式</span>
+  <h2 class="section-title">每个细节<br><em>皆经考量</em></h2>
+  <div class="amenities-grid">
+    <div class="amenity-card">
+      <div class="amenity-number">01</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">泳池</div>
+      <p class="amenity-desc">私人泳池坐落于景观花园之中，从格里莫高地俯瞰圣特罗佩湾。</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-number">02</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">私人 网球场</div>
+      <p class="amenity-desc">完整的私人网球场，为庄园增添卓越的运动与休闲体验。</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-number">03</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">150 平方米 车库</div>
+      <p class="amenity-desc">宽敞的私人车库，在里维埃拉十分罕见，可容纳多辆收藏级车辆。</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-number">04</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">Internal 电梯</div>
+      <p class="amenity-desc">主庄园各楼层均可便捷通达，包括宽敞的地下层。</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-number">05</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">高尔夫 — 蔚蓝海岸最古老球场</div>
+      <p class="amenity-desc">传奇的Beauvallon高尔夫球场是法国里维埃拉历史最悠久的球场，就在庄园门前。</p>
+    </div>
+    <div class="amenity-card">
+      <div class="amenity-number">06</div>
+      <div class="amenity-icon"></div>
+      <div class="amenity-title">Secured 私人 庄园</div>
+      <p class="amenity-desc">The 庄园e Privé de Beauvallon offers complete privacy and security within one of the most desirable enclaves on the Gulf.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCATION ─── -->
+<section class="location" id="location">
+  <div class="fade-in">
+    <span class="section-label">Beauvallon · 格里莫 · 圣特罗佩湾</span>
+    <h2 class="section-title">位于Beauvallon<br>与<em>圣特罗佩</em>之间</h2>
+    <div class="gold-divider"></div>
+    <p class="section-text">
+      The 庄园e Privé de Beauvallon in Grimaud occupies one of the most privileged positions on the Gulf of Saint-Tropez — elevated enough to command the full panorama, private enough to feel entirely removed from the world.
+    </p>
+    <p class="section-text" style="margin-top:20px;">
+      格里莫与Beauvallon近在咫尺。乘坐渡轮约15分钟即可抵达圣特罗佩村。蔚蓝海岸最古老的高尔夫球场就在庄园门前。
+    </p>
+
+    <div class="location-points">
+      <div class="location-point">
+        <span class="location-point-name">圣特罗佩村（渡轮）</span>
+        <span class="location-point-time">15 min</span>
+      </div>
+      <div class="location-point">
+        <span class="location-point-name">私人 beach, 庄园e de Beauvallon</span>
+        <span class="location-point-time">驾车5分钟</span>
+      </div>
+      <div class="location-point">
+        <span class="location-point-name">Beauvallon高尔夫球场</span>
+        <span class="location-point-time">近在咫尺</span>
+      </div>
+      <div class="location-point">
+        <span class="location-point-name">La Môle – Saint-Tropez机场</span>
+        <span class="location-point-time">20 min</span>
+      </div>
+      <div class="location-point">
+        <span class="location-point-name">最近直升机停机坪</span>
+        <span class="location-point-time">10 min</span>
+      </div>
+      <div class="location-point">
+        <span class="location-point-name">尼斯蔚蓝海岸机场</span>
+        <span class="location-point-time">1h</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="location-map fade-in" style="transition-delay:0.3s;">
+    <img src="view2.jpeg" alt="Château La Chrysanelle望向圣特罗佩湾的海景" style="width:100%;height:100%;object-fit:cover;object-position:center;">
+  </div>
+</section>
+
+<!-- ─── AGENCY ─── -->
+<section class="agency fade-in" id="agency">
+  <div class="agency-inner">
+    <div class="agency-brand-card">
+      <img class="agency-logo" src="logo-107-color.png" alt="107 Promenade International Real Estate logo">
+    </div>
+    <div class="agency-copy">
+      <span class="section-label">由107 Promenade呈现</span>
+      <h2 class="section-title">独家代理<br><em>法国里维埃拉专家</em></h2>
+      <div class="gold-divider"></div>
+      <p class="section-text">
+        107 Promenade International Real Estate作为独家代理呈现Château La Chrysanelle。凭借在法国里维埃拉、戛纳至摩纳哥之间海滨及豪宅物业领域30年的经验，机构拥有深厚的市场洞察、谨慎专业的服务方式，以及对高端滨海生活方式的精确认知。
+      </p>
+      <p class="section-text" style="margin-top:20px;">
+        服务范围涵盖房产交易、季节性租赁、长期租赁及物业管理。107 Promenade位于尼斯英国人漫步大道，被公认为尼斯及蔚蓝海岸其他区域的重要专家之一，尤其擅长处理卓越海滨地址。
+      </p>
+      <a href="#contact" class="agency-cta">联系独家代理 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section class="contact" id="contact">
+  <div class="contact-left">
+    <span class="section-label">私人 Presentation</span>
+    <h2 class="section-title">预约<br><em>参观</em></h2>
+    <p class="section-text">
+      Château La Chrysanelle由107 Promenade International Real Estate独家呈现，仅可预约私人展示。完整资料，包括建筑平面图和摄影资料，可在保密条件下按需提供。
+    </p>
+    <div class="contact-info">
+      <div class="contact-info-line">
+        <span class="contact-info-label">代理机构</span>
+        <span class="contact-info-value">107 Promenade International Real Estate</span>
+      </div>
+      <div class="contact-info-line">
+        <span class="contact-info-label">地址</span>
+        <span class="contact-info-value">107 Promenade des Anglais — 06000 Nice, France</span>
+      </div>
+      <div class="contact-info-line">
+        <span class="contact-info-label">联系人</span>
+        <span class="contact-info-value">Kirkor Ajderhanyan</span>
+      </div>
+      <div class="contact-info-line">
+        <span class="contact-info-label">电话</span>
+        <span class="contact-info-value"><a href="tel:+33614598899">+33 (0)6 14 59 88 99</a></span>
+      </div>
+      <div class="contact-info-line">
+        <span class="contact-info-label">Email</span>
+        <span class="contact-info-value"><a href="mailto:kirkor@107promenade.com">kirkor@107promenade.com</a></span>
+      </div>
+      <div class="contact-info-line">
+        <span class="contact-info-label">Instagram</span>
+        <span class="contact-info-value">@107promenade</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-right">
+    <form class="contact-form" action="https://formspree.io/f/xzdyqwaz" method="POST">
+      <input type="hidden" name="_subject" value="New Château La Chrysanelle Lead">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstname">名</label>
+          <input type="text" id="firstname" name="firstname" placeholder="Jean">
+        </div>
+        <div class="form-group">
+          <label for="lastname">姓</label>
+          <input type="text" id="lastname" name="lastname" placeholder="Dupont">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email 地址</label>
+        <input type="email" id="email" name="email" placeholder="jean.dupont@example.com">
+      </div>
+      <div class="form-group">
+        <label for="phone">电话</label>
+        <input type="tel" id="phone" name="phone" placeholder="+33 6 00 00 00 00">
+      </div>
+      <div class="form-group">
+        <label for="profile">您的身份</label>
+        <select id="profile" name="profile">
+          <option value="">请选择您的身份</option>
+          <option>买家</option>
+          <option>买家's Representative</option>
+          <option>私人 Banker / Wealth Manager</option>
+          <option>家族办公室</option>
+          <option>媒体 / 新闻</option>
+          <option>其他</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="message">留言</label>
+        <textarea id="message" name="message" placeholder="我希望收到完整资料，并进一步了解私人参观安排……"></textarea>
+      </div>
+      <button type="submit" class="form-submit">发送咨询</button>
+      <p class="form-legal">您的咨询将安全发送，并由107 Promenade International Real Estate保密处理。</p>
+    </form>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-logo">107 <span>Promenade</span> International Real Estate</div>
+  <div class="footer-copy">© 2026 · Château La Chrysanelle · 版权所有</div>
+  <div class="footer-links">
+    <a href="#">隐私政策</a>
+    <a href="#">法律声明</a>
+    <a href="https://www.107promenade.com">107promenade.com</a>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Intersection observer for fade-in animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
